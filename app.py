@@ -15,7 +15,7 @@ app = Flask(__name__)
 acceptableMathList = ['simplify', 'factor', 'derive', 'integrate', 'zeroes', 'tangent', 'area', 'cos', 'sin', 'tan', 'arccos', 'arcsin', 'arctan', 'abs', 'log']
 group = Group.list().first
 bot = Bot.list().first
-bot.post(bot.name + ' ' + Bot.index())
+bot.post(bot.name)
 # We don't want to reply to ourselves!
 if bot.name != 'testbot':
     newMsg = group.messages().newest.text
