@@ -12,8 +12,9 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-acceptableMathList = ['simplify', 'factor', 'derive', 'integrate', 'zeroes', 'tangent', 'area', 'cos', 'sin', 'tan', 'arccos', 'arcsin', 'arctan', 'abs', 'log']
-while True:
+@app.route('/', methods=['POST'])
+def webhook():
+    acceptableMathList = ['simplify', 'factor', 'derive', 'integrate', 'zeroes', 'tangent', 'area', 'cos', 'sin', 'tan', 'arccos', 'arcsin', 'arctan', 'abs', 'log']
     group = Group.list().first
     bot = Bot.list().first
     bot.post('this is a test')
@@ -25,7 +26,7 @@ while True:
             msg = 'help me!'
             bot.post(msg)
         elif msgArr[0] == '!math':
-            if !msgArr[1] in acceptableMathList:
+            if msgArr[1] not in acceptableMathList:
                 msg = 'I couldn\'t understand which operation to perform'
                 bot.post(msg)
             elif msgArr[0] == '!math':
