@@ -16,11 +16,10 @@ acceptableMathList = ['simplify', 'factor', 'derive', 'integrate', 'zeroes', 'ta
 group = Group.list().first
 bot = Bot.list().first
 bot.post(bot.name)
-if bot.name == 'testbot':
-    bot.post('cat')
+newMsg = group.messages().newest.text
+author = newMsg.name
 # We don't want to reply to ourselves!
-if bot.name != 'testbot':
-    newMsg = group.messages().newest.text
+if author != 'testbot':
     msgArr = newMsg.split()
     if msgArr[0] == '!help':
         msg = 'help me!'
