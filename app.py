@@ -16,6 +16,8 @@ acceptableMathList = ['simplify', 'factor', 'derive', 'integrate', 'zeroes', 'ta
 group = Group.list().first
 bot = Bot.list().first
 bot.post(bot.name)
+if bot.name == 'testbot':
+    bot.post('cat')
 # We don't want to reply to ourselves!
 if bot.name != 'testbot':
     newMsg = group.messages().newest.text
