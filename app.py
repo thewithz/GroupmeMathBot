@@ -18,6 +18,7 @@ bot = Bot.list().first
 bot.post(bot.name)
 newMsg = group.messages().newest
 author = newMsg.name
+bot.post(newMsg.text.split())
 # We don't want to reply to ourselves!
 if author != 'testbot':
     msgArr = newMsg.text.split()
