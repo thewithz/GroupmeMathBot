@@ -15,10 +15,9 @@ app = Flask(__name__)
 acceptableMathList = ['simplify', 'factor', 'derive', 'integrate', 'zeroes', 'tangent', 'area', 'cos', 'sin', 'tan', 'arccos', 'arcsin', 'arctan', 'abs', 'log']
 group = Group.list().first
 bot = Bot.list().first
-bot.post(bot.name)
 newMsg = group.messages().newest
 author = newMsg.name
-bot.post(newMsg.text.split())
+bot.post(newMsg.text.split()[0])
 # We don't want to reply to ourselves!
 if author != 'testbot':
     msgArr = newMsg.text.split()
