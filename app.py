@@ -17,7 +17,7 @@ group = Group.list().first
 bot = Bot.list().first
 newMsg = group.messages().newest
 author = newMsg.name
-newton.simplify('x^2-4')
+bot.post(newton.simplify('x^2-4'))
 # We don't want to reply to ourselves!
 if author != 'testbot':
     msgArr = newMsg.text.split()
