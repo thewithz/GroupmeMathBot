@@ -30,6 +30,7 @@ def webhook():
             if msgArr[1] not in acceptableMathList:
                 msg = 'I couldn\'t understand which operation to perform'
                 bot.post(msg)
+                return "ok", 200
             elif msgArr[0] == '!math':
                 if msgArr[1] == 'simplify':
                     bot.post(newton.simplify(msgArr[2]))
@@ -60,5 +61,6 @@ def webhook():
                 elif msgArr[1] == 'abs':
                     bot.post(newton.abs(msgArr[2]))
                 elif msgArr[1] == 'log':
-                    bot.post(newton.log(msgArr[2], msgArr[3]))
+                    bot.post(newton.log(msgArr[2], msgArr[3])
+    return "ok", 200
 
