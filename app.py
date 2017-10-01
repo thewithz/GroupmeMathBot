@@ -46,7 +46,7 @@ def webhook():
                 elif msgArr[1] == 'tangent':
                     bot.post(newton.tangent(msgArr[2], msgArr[3]))
                 elif msgArr[1] == 'area':
-                    bot.post(newton.area(msgArr[2]), msgArr[3], msgArr[4])
+                    bot.post(newton.area(msgArr[2], msgArr[3], msgArr[4]))
                 elif msgArr[1] == 'cos':
                     bot.post(newton.cos(msgArr[2]))
                 elif msgArr[1] == 'sin':
@@ -62,6 +62,6 @@ def webhook():
                 elif msgArr[1] == 'abs':
                     bot.post(newton.abs(msgArr[2]))
                 elif msgArr[1] == 'log':
-                    bot.post(newton.log(msgArr[2], msgArr[3])
+                    bot.post(newton.log(msgArr[2], msgArr[3]))
     return 'ok', 200
 
