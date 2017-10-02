@@ -12,6 +12,8 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+print(newton.cos('pi'))
+
 acceptableMathList = ['simplify', 'factor', 'derive', 'integrate', 'zeroes', 'tangent', 'area', 'cos', 'sin', 'tan', 'arccos', 'arcsin', 'arctan', 'abs', 'log']
 group = Group.list().first
 bot = Bot.list().first
@@ -50,17 +52,17 @@ def webhook():
                 elif msgArr[1] == 'cos':
                     bot.post(newton.cos(msgArr[2]))
                 elif msgArr[1] == 'sin':
-                    bot.post(newton.sin(int(msgArr[2])))
+                    bot.post(newton.sin(msgArr[2]))
                 elif msgArr[1] == 'tan':
-                    bot.post(newton.tan(int(msgArr[2])))
+                    bot.post(newton.tan(msgArr[2]))
                 elif msgArr[1] == 'arccos':
-                    bot.post(newton.arccos(int(msgArr[2])))
+                    bot.post(newton.arccos(msgArr[2]))
                 elif msgArr[1] == 'arcsin':
-                    bot.post(newton.arcsin(int(msgArr[2])))
+                    bot.post(newton.arcsin(msgArr[2]))
                 elif msgArr[1] == 'arctan':
-                    bot.post(newton.arctan(int(msgArr[2])))
+                    bot.post(newton.arctan(msgArr[2]))
                 elif msgArr[1] == 'abs':
-                    bot.post(newton.abs(int(msgArr[2])))
+                    bot.post(newton.abs(msgArr[2]))
                 elif msgArr[1] == 'log':
                     bot.post(newton.log(int(msgArr[2]), int(msgArr[3])))
     return 'ok', 200
