@@ -12,8 +12,6 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-print(newton.cos('pi'))
-
 acceptableMathList = ['simplify', 'factor', 'derive', 'integrate', 'zeroes', 'tangent', 'area', 'cos', 'sin', 'tan', 'arccos', 'arcsin', 'arctan', 'abs', 'log']
 group = Group.list().first
 bot = Bot.list().first
