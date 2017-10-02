@@ -24,7 +24,7 @@ def webhook():
     if author != 'testbot':
         msgArr = newMsg.text.split()
         if msgArr[0] == '!help':
-            msg = 'Examples\n!math simplify 2x+4x-5\n!math factor x^4-x^2\n!math integrate 10x\n!math tangent x^2 4\n!math area -x^2 3 8'
+            msg = 'Examples\n!math simplify 2x+4x-5 = 6x-5\n!math factor x^4-x^2 = x^2 (x+1) (x-1)\n!math integrate 10x = 5x^2\n!math tangent x^2 4\n!math area -x^2 3 8'
             bot.post(msg)
             return 'ok', 200
         elif msgArr[0] == '!math':
@@ -36,7 +36,7 @@ def webhook():
                 if msgArr[1] == 'simplify':
                     bot.post(newton.simplify(msgArr[2]))
                 elif msgArr[1] == 'factor':
-                    bot.post(newton.factor(msgArr[2]))
+                    bot.post(newton.factor(msgArr[2])[0])
                 elif msgArr[1] == 'derive':
                     bot.post(newton.derive(msgArr[2]))
                 elif msgArr[1] == 'integrate':
