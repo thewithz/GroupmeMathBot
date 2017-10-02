@@ -26,7 +26,7 @@ def webhook():
     if author != 'testbot':
         msgArr = newMsg.text.split()
         if msgArr[0] == '!help':
-            msg = 'help me!'
+            msg = 'Examples\n!math simplify 2x+4x-5\n!math factor x^4-x^2\n!math integrate 10x\n!math tangent x^2 4\n!math area -x^2 3 8'
             bot.post(msg)
             return 'ok', 200
         elif msgArr[0] == '!math':
